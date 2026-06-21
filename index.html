@@ -4,36 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Profile Finder</title>
+    <title>GitHub Developer Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <header>
 
-        <h1>GitHub Profile Finder</h1>
+        <h1>GitHub Developer Dashboard</h1>
 
-        <p class="subtitle">
-            Search and explore GitHub user profiles
-        </p>
-
-        <input
-            type="text"
-            id="username"
-            placeholder="Enter GitHub Username">
-
-        <button onclick="getProfile()">
-            Search Profile
+        <button id="themeBtn">
+            🌙 Dark Mode
         </button>
 
-        <div id="profile">
+    </header>
 
-            Search for a GitHub user...
+    <main>
+
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter GitHub Username">
+
+            <button onclick="getProfile()">
+                Search
+            </button>
 
         </div>
 
-    </div>
+        <div id="loader" class="loader hidden"></div>
+
+        <section id="profileCard">
+        </section>
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <h3>Followers</h3>
+                <p id="followers">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Following</h3>
+                <p id="following">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Repositories</h3>
+                <p id="repos">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Account Age</h3>
+                <p id="age">0</p>
+            </div>
+
+        </section>
+
+        <section>
+
+            <h2>Recent Searches</h2>
+
+            <ul id="history"></ul>
+
+        </section>
+
+        <section>
+
+            <h2>Repositories</h2>
+
+            <div id="repoList"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        GitHub Developer Dashboard v1.0
+    </footer>
 
     <script src="script.js"></script>
 
