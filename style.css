@@ -1,71 +1,116 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
     margin: 0;
+    background: #f4f4f4;
     padding: 20px;
 }
 
-.container {
-    max-width: 850px;
-    margin: auto;
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+.dark {
+    background: #121212;
+    color: white;
 }
 
-h1 {
-    text-align: center;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.subtitle {
-    text-align: center;
-    color: gray;
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-input,
-button {
-    width: 100%;
+input {
+    flex: 1;
     padding: 12px;
-    margin-top: 10px;
-    box-sizing: border-box;
 }
 
 button {
+    padding: 12px;
     cursor: pointer;
 }
 
-button:hover {
-    opacity: 0.9;
-}
-
-#profile {
+#profileCard {
     margin-top: 20px;
-    background: #f8f8f8;
+    background: white;
     padding: 20px;
     border-radius: 10px;
+}
+
+.dark #profileCard {
+    background: #222;
 }
 
 .profile-image {
     width: 150px;
     border-radius: 50%;
-    display: block;
-    margin: auto;
 }
 
-.profile-name {
+.stats {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap: 15px;
+}
+
+.stat-card {
+    background: white;
+    padding: 15px;
     text-align: center;
+    border-radius: 10px;
 }
 
-a {
-    text-decoration: none;
-    color: blue;
+.dark .stat-card {
+    background: #222;
 }
 
-a:hover {
-    text-decoration: underline;
+#repoList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 15px;
 }
 
-.info {
-    margin-top: 10px;
+.repo-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.dark .repo-card {
+    background: #222;
+}
+
+.loader {
+    border: 5px solid #ddd;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 20px auto;
+    animation: spin 1s linear infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+@media(max-width:600px){
+
+    .search-container{
+        flex-direction:column;
+    }
+
 }
